@@ -68,6 +68,9 @@ end
 
 def ensure_node_version_set
   say "\n=== Setting Node version ==="
+  say "\n--- Skip!"
+  return
+  
   return if file_contains?("package.json", "engines")
 
   node_engine_config = <<-JSON
@@ -77,7 +80,7 @@ def ensure_node_version_set
   },
       JSON
 
-  # insert_into_file("package.json", node_engine_config, after: "{")
+  insert_into_file("package.json", node_engine_config, after: "{")
 end
 
 def setup_readme
