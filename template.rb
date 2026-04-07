@@ -77,7 +77,7 @@ def ensure_node_version_set
   },
       JSON
 
-  insert_into_file("package.json", node_engine_config, after: "{")
+  # insert_into_file("package.json", node_engine_config, after: "{")
 end
 
 def setup_readme
